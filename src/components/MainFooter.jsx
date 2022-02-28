@@ -41,10 +41,10 @@ function MainFooter() {
               </ul>
             </Col>
           </Row>
+        </Container>
           <Row>
             <p className="text-center bg-success m-0 py-2">© Copyright 2022 - <Link to="#" className="text-black" style={{textDecoration:"none"}}>High Haku Frontend Group 1</Link></p>
           </Row>
-        </Container>
       </div>
     </>
   );
