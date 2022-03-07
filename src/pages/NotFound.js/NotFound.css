@@ -1,0 +1,13 @@
+.notfound{
+    padding: 0%;
+    margin: 0%;
+    font-weight: bolder;
+}
+
+.notfound .body-atas{
+    height: 50vh;
+}
+
+.notfound img{
+    width: 10rem;
+}
