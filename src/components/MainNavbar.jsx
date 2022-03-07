@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
+import { Outlet, Link } from "react-router-dom";
 
 function MainNavbar() {
   return (
@@ -10,7 +11,7 @@ function MainNavbar() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
       <Nav>
-        <Nav.Link href="#about">About Us</Nav.Link>
+        <Nav.Link href="#about"><Link to="about">About Us</Link></Nav.Link>
         <Nav.Link href="#category">Category</Nav.Link>
         <Nav.Link href="#login">Login</Nav.Link>
         <Nav.Link href="#register">Register</Nav.Link>
@@ -18,6 +19,8 @@ function MainNavbar() {
     </Navbar.Collapse>
   </Container>
 </Navbar>
+
+    <Outlet/>
     </>
   );
 }

@@ -1,0 +1,28 @@
+.about-us{
+    margin-top:  40px;
+}
+
+.about-us .content-team{
+    display: flex;
+    text-align: center;
+}
+
+.about-us h1{
+    text-align: center;
+    font-weight: bolder;
+
+}
+
+.about-us img{
+    width: 70%;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+.about-us h4{
+    margin-top: 15px;
+}
+
+.about-us p{
+    text-align: justify;
+}
