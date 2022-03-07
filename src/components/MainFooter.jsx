@@ -5,10 +5,10 @@ import {Link} from "react-router-dom"
 function MainFooter() {
   return (
     <>
-      <div className="bg-dark text-white mt-5" style={{ minHeight: "200px" }}>
+      <div className="bg-dark text-white" style={{ minHeight: "200px" }}>
         <Container fluid="lg">
           <Row className="py-5 px-4 justify-content-between">
-            <Col md={7}>
+            <Col md={7} className="mb-5">
               <h3>Haku Library</h3>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel
