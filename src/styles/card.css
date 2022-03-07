@@ -1,0 +1,8 @@
+.card {
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+.card:hover {
+    filter: brightness(.8);
+}
