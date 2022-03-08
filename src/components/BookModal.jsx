@@ -1,11 +1,19 @@
 import React from "react";
 import { Modal, Button, Row, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addBookToMyLibrary } from "../redux/actions/userAction";
 
 function BookModal(props) {
   const book = props.data;
-  const regex = /id=.*/g
+  const regex = /id=.*/g;
   const url = regex.exec(props.data.readlink)[0];
+  const dispatch = useDispatch();
+
+  function addToMyLibrary() {
+    dispatch(addBookToMyLibrary());
+    //props.onHide();
+  }
 
   return (
     <Modal
@@ -24,11 +32,11 @@ function BookModal(props) {
           x
         </Button>
         <Row>
-          <Col md="4" className="d-flex no-repeat mt-2 justify-content-center">
+          <Col md="4" className="d-flex no-repeat mt-2 justify-content-center position-relative">
             <img src={book.cover} alt="" style={{ objectFit: "contain" }} />
           </Col>
           <Col md="8">
-            <h4 className="mb-3">{book.judul}</h4>
+            <h4 className="mb-3">{book.judul} <div className="ms-2 text-light p-1 fw-bold d-inline-block bg-danger" style={{fontSize:'15px'}}>{book.price ? `Rp. ${book.price}` : "Out of Stock"}</div></h4>
             <p className="m-0 my-1">
               <b>Penulis :</b> {book.penulis}
             </p>
@@ -40,7 +48,7 @@ function BookModal(props) {
             </p>
             <div>
               <p className="m-0">
-                <b>Sinopsis :</b>
+                <b>Deskripsi :</b>
               </p>
               <div
                 className=""
@@ -50,19 +58,24 @@ function BookModal(props) {
                   fontSize: ".9em",
                 }}
               >
-                {book.sinopsis}
+                {book.deskripsi}
               </div>
             </div>
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="success" onClick={props.onHide}>
-          Add to My Library
-        </Button>
-        <a href={`/book/${url}`}>
-          <Button variant="success">Read Now</Button>
-        </a>
+      <Modal.Footer className="justify-content-between">
+      {book.price ? (
+        <Button variant='outline-success' className="d-flex align-items-center"><img src={require('../images/icons/add-to-cart.png')} width='28px' alt="add to cart" /><span className="ms-2 fw-bold">Add to Cart</span></Button>
+      ) : <div></div>}
+        <div className="button-container d-flex">
+          <Button className="me-2" variant="success" onClick={addToMyLibrary}>
+            Add to My Library
+          </Button>
+          <a href={`/book/${url}`}>
+            <Button variant="success">Read Now</Button>
+          </a>
+        </div>
       </Modal.Footer>
     </Modal>
   );

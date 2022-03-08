@@ -10,9 +10,14 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
-        case (ADD_TO_MYLIBRARY):
-            return state
+        case ADD_TO_MYLIBRARY:
+            return {
+                ...state,
+                myLibrary: action.payload
+            }
         default:
             return state
     }
 }
+
+export default userReducer
