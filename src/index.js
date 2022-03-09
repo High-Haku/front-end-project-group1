@@ -1,4 +1,6 @@
 import React from "react";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -11,8 +13,7 @@ import rootReducer from "./redux/reducers/index";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+
 
 ReactDOM.render(
   <Provider store={store}>

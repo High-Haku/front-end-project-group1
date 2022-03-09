@@ -7,6 +7,9 @@ import CategoryPage from "./pages/CategoryPage";
 import BookPage from "./pages/BookPage";
 import UserPage from './pages/UserPage';
 
+import Login from './pages/Login'
+import Registration from './pages/Registration'
+
 import Payment from './pages/Payment/Payment';
 
 function App() {
@@ -17,6 +20,8 @@ function App() {
           <Route index element={<HomePage/>} />
           <Route path="about" element={<AboutUs />} />  
         <Route path="/payment" element={<Payment />}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/register" element={<Registration/>}></Route>
         </Route> 
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/book/:id" element={<BookPage />}></Route>
