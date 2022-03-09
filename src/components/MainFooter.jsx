@@ -9,7 +9,7 @@ function MainFooter() {
         <Container fluid="lg">
           <Row className="py-5 px-4 justify-content-between">
             <Col md={7} className="mb-5">
-              <h3>Haku Library</h3>
+              <h3 style={{fontFamily:'Berkshire Swash'}}>Haku Library</h3>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel
                 optio sunt earum odio a molestiae aliquam eius eos, pariatur
@@ -43,7 +43,7 @@ function MainFooter() {
           </Row>
         </Container>
           <Row>
-            <p className="text-center bg-success m-0 py-2">© Copyright 2022 - <Link to="#" className="text-black" style={{textDecoration:"none"}}>High Haku Frontend Group 1</Link></p>
+            <p className="text-center bg-success m-0 py-2">© Copyright 2022 - <Link to="/about" className="text-black" style={{textDecoration:"none"}}>High Haku Frontend Group 1</Link></p>
           </Row>
       </div>
     </>
