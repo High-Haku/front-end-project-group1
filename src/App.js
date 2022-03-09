@@ -7,6 +7,8 @@ import CategoryPage from "./pages/CategoryPage";
 import BookPage from "./pages/BookPage";
 import UserPage from './pages/UserPage';
 
+import Payment from './pages/Payment/Payment';
+
 function App() {
   return (
     <>
@@ -17,8 +19,10 @@ function App() {
         </Route> 
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/book/:id" element={<BookPage />}></Route>
+      <Payment/>
         <Route path="/user" element={<UserPage />}></Route>
       </Routes>
+
     </>
   );
 }
