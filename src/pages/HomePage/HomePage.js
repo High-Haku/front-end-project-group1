@@ -1,21 +1,13 @@
 import "./HomePage.css";
 import MainFooter from "../../components/MainFooter";
 import Bookoftheday from "./Bookoftheday";
-import TopPicks from "./TopPicks";
+import TopPicks from "./TopPicks/TopPicks";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 function HomePage() {
   const[search, setSearch] = useState('')
   const[data, setData] = useState([])
-  // const[filterData, setFilterData] = useState([])
-
-
-// useEffect(()=>{
-//   setFilterData(
-//     data.filter((data)=> data.name.toLowerCase().includes(search.toLowerCase()))
-//   )
-// },[search, data])
 
 async function getData(){
   const hasil = await axios.get (
@@ -94,7 +86,7 @@ function filterData(datas) {
            <img src={d.cover} className="card-img-top" alt="..."/>
            <div className="card-body">
              <h6 className="card-title">{d.judul}</h6>
-             <a href="#" class="btn btn-primary">Lanjut Baca</a>
+             <a href="#" class="btn btn-dark">Lanjut Baca</a>
            </div>
          </div>
       ))}
