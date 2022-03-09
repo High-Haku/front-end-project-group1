@@ -66,31 +66,6 @@
         justify-content: center;
     }
 
-    .TopPicks{
-        display: none;
-    }
-
-    .TopPicks-sm{
-        height: 250px;
-        padding: 0%;
-        margin: 0%;
-        /* display: flex;
-        align-content: center; */
-    }
-    
-    
-    .TopPicks-sm img{
-        height: 200px;
-    }
-    
-    .TopPicks-sm button{
-        font-weight: bolder;
-        font-size: 15px;
-        color: black;
-        text-decoration: none;
-    
-    }
-
     /* Modal */
 
     .ModalHomePage{
@@ -112,32 +87,7 @@
     text-align: justify;
 }
     
-    /* Top Picks */
 
-.TopPicks{
-    display: none;
-}
-
-.TopPicks-sm{
-    height: 300px;
-    padding: 0%;
-    margin: 0%;
-    /* display: flex;
-    align-content: center; */
-}
-
-
-.TopPicks-sm img{
-    height: 250px;
-}
-
-.TopPicks-sm button{
-    font-weight: bolder;
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-
-}
 
 }
 
@@ -155,30 +105,6 @@
     .Bookoftheday p{
         text-align: justify;
     }
-
-    .TopPicks-sm{
-        display: none;
-    }
-
-
-    .TopPicks{
-        height: 250px;
-        padding: 0%;
-        margin: 0%;
-    }
-    
-    .TopPicks img{
-        height: 150px;
-    }
-
-    .TopPicks button{
-        font-weight: bolder;
-        font-size: 13px;
-        color: black;
-        text-decoration: none;
-    }
-    
-
 }
 
 
@@ -194,28 +120,6 @@
     text-align: justify;
 }
 
-/* Top Picks */
-
-.TopPicks{
-    height: 300px;
-    padding: 0%;
-    margin: 0%;
-}
-
-.TopPicks img{
-    height: 200px;
-}
-
-.TopPicks button{
-    font-weight: bolder;
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-}
-
-.TopPicks-sm{
-    display: none;
-}
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1400px) {
@@ -228,27 +132,6 @@
         text-align: justify;
     }
 
-    .TopPicks-sm{
-        display: none;
-    }
-
-    .TopPicks{
-        height: 300px;
-        padding: 0%;
-        margin: 0%;
-    }
-    
-    .TopPicks img{
-        height: 200px;
-    }
-    
-    .TopPicks button{
-        font-weight: bolder;
-        font-size: 22px;
-        color: black;
-        text-decoration: none;
-        height: 50px;
-    }
 }
 
 

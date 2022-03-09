@@ -6,17 +6,20 @@ import MainNavbar from './components/MainNavbar';
 import CategoryPage from "./pages/CategoryPage";
 import BookPage from "./pages/BookPage"
 
+import Payment from './pages/Payment/Payment';
+
 function App() {
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<MainNavbar />}>
           <Route index element={<HomePage/>} />
           <Route path="about" element={<AboutUs />} />  
         </Route> 
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/book/:id" element={<BookPage />}></Route>
-      </Routes>
+      </Routes> */}
+      <Payment/>
     </>
   );
 }
