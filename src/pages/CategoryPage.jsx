@@ -43,7 +43,7 @@ function CategoryPage() {
     : `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&&startIndex=0&maxResults=20`
 
     const result = await axios.get(newUrl).catch((error) => console.log(error));
-    //console.log(result);
+    console.log(result);
     const datas = result.data.items;
     setItems({...items,totalItems:result.data.totalItems});
     filterData(datas);
@@ -70,7 +70,7 @@ function CategoryPage() {
           buylink:undefined
         };
         
-        if(data.saleInfo.saleability !== 'NOT_FOR_SALE') {
+        if(data.saleInfo.saleability === 'FOR_SALE') {
           book.price = data.saleInfo.retailPrice.amount;
           book.buylink = data.saleInfo.buyLink
         }
@@ -80,7 +80,7 @@ function CategoryPage() {
 
     }
 
-    console.log(filteredData);
+    //console.log(filteredData);
     setbuku(filteredData);
   }
 

@@ -13,7 +13,12 @@ function UserPage() {
             <p className='p-0 m-0 text-capitalize fw-bold'>{data.name}</p>
             <p className='p-0 m-0'>{data.email}</p>
             <p className='p-0 m-0'>{data.phone}</p>
-            <p className='p-0 m-0'>{data.myLibrary}</p>
+            <p className='p-0 m-0'>My Library : </p>
+            <ol>
+            {data.myLibrary.map((d,index) => {
+              return <li key={index}>{d.judul}</li>
+            })}
+            </ol>
         </div>
         <MainFooter />
     </>

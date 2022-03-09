@@ -16,10 +16,10 @@ function App() {
         <Route path="/" element={<MainNavbar />}>
           <Route index element={<HomePage/>} />
           <Route path="about" element={<AboutUs />} />  
+        <Route path="/payment" element={<Payment />}></Route>
         </Route> 
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/book/:id" element={<BookPage />}></Route>
-      <Payment/>
         <Route path="/user" element={<UserPage />}></Route>
       </Routes>
 
