@@ -8,7 +8,6 @@ function Sidebar({ fetchData, setCategory, reset }) {
   const categories = [
     "Adventure",
     "Biography",
-    "Classic",
     "Computers",
     "Comedy",
     "Fantasy",
@@ -26,7 +25,7 @@ function Sidebar({ fetchData, setCategory, reset }) {
     "Religion",
     "Romance",
     "Science",
-    "Thriller",
+    "Thriller"
   ];
 
   function handleClick(element) {
