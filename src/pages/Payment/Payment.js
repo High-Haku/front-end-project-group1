@@ -1,9 +1,11 @@
 import { Dropdown, Table, Button } from "react-bootstrap";
 import './Payment.css'
+import MainFooter from "../../components/MainFooter";
 
 function Payment() {
   return (
     <>
+
       <div className="container my-5">
         <div className="row d-flex align-items-center">
           <div className="col-md-5 offset-1">

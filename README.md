@@ -18,6 +18,8 @@ package yang dibutuhkan :
 4. bootstrap
 5. react-bootstrap
 6. axios
+7. react-slick
+8. slick-carousel
 
 cara install -> " npm install react-router-dom redux react-redux bootstrap react-bootstrap axios -f "
 
