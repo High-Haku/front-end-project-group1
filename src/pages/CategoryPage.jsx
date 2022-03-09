@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import topPicks from '../topPicks'
+
 // Components ////////////
 import MainFooter from "../components/MainFooter";
 import MainNavbar from "../components/MainNavbar";
@@ -13,7 +15,7 @@ import { Container } from "react-bootstrap";
 /////////////////////////
 
 function CategoryPage() {
-  const [buku, setbuku] = useState([]);
+  const [buku, setbuku] = useState(topPicks);
   const [category, setCategory] = useState('Top Picks for You');
   const [items, setItems] = useState({
     startIndex:0,
@@ -21,10 +23,6 @@ function CategoryPage() {
   })
   const [url,setUrl] = useState('');
   let searchInput = "indonesia";
-
-  useEffect(() => {
-    fetchData("butterfly");
-  }, []);
 
   async function nextPage(startIndex) {
     const result = await axios.get(`${url}&&startIndex=${startIndex}&maxResults=20`).catch((error) => console.log(error));
@@ -45,7 +43,7 @@ function CategoryPage() {
     : `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&&startIndex=0&maxResults=20`
 
     const result = await axios.get(newUrl).catch((error) => console.log(error));
-    console.log(result);
+    //console.log(result);
     const datas = result.data.items;
     setItems({...items,totalItems:result.data.totalItems});
     filterData(datas);
@@ -66,13 +64,23 @@ function CategoryPage() {
           penulis: data.volumeInfo.authors,
           date: data.volumeInfo.publishedDate,
           penerbit: data.volumeInfo.publisher,
-          sinopsis: data.volumeInfo.description,
+          deskripsi: data.volumeInfo.description,
           readlink: data.volumeInfo.previewLink,
+          price: undefined,
+          buylink:undefined
         };
+        
+        if(data.saleInfo.saleability !== 'NOT_FOR_SALE') {
+          book.price = data.saleInfo.retailPrice.amount;
+          book.buylink = data.saleInfo.buyLink
+        }
+
         filteredData.push(book);
       }
+
     }
 
+    console.log(filteredData);
     setbuku(filteredData);
   }
 
@@ -92,8 +100,8 @@ function CategoryPage() {
         <main style={{ width: "100%" }}>
           <CategoryCarousel />
           <Container>
-            <div className="d-flex mt-5 justify-content-between align-items-center">
-              <h3 className="">{category}</h3>
+            <div className="d-md-flex mt-5 justify-content-between align-items-center">
+              <h3 className="md">{category}</h3>
               <Search setSearch={setSearch} />
             </div>
             <div id="book-container" className="d-flex flex-wrap justify-content-center mb-2">
