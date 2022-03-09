@@ -120,7 +120,7 @@ function Payment() {
 
             <hr className="garis" />
 
-            <h6 className="d-flex justify-content-end text-danger fw-bold">Rp. 37.000</h6>
+            <h6 className="d-flex justify-content-end text-danger fw-bold">Rp. 137.000</h6>
 
             <div className="d-flex justify-content-end">
               <Button className="w-50" variant="dark">Bayar Sekarang</Button>

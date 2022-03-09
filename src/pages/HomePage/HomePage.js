@@ -98,7 +98,7 @@ function filterData(datas) {
 
      
 
-      <Bookoftheday />
+      <Bookoftheday data={data} />
       <TopPicks />
       <MainFooter />
     </>

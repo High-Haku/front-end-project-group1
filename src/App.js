@@ -11,15 +11,14 @@ import Payment from './pages/Payment/Payment';
 function App() {
   return (
     <>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<MainNavbar />}>
           <Route index element={<HomePage/>} />
           <Route path="about" element={<AboutUs />} />  
         </Route> 
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/book/:id" element={<BookPage />}></Route>
-      </Routes> */}
-      <Payment/>
+      </Routes>
     </>
   );
 }

@@ -1,7 +1,8 @@
 
 import "./HomePage.css";
 
-function Bookoftheday() {
+function Bookoftheday({data}) {
+  console.log(data)
   return (
     <>
       <div className="Bookoftheday mt-3">
@@ -14,7 +15,7 @@ function Bookoftheday() {
           <div className="row">
             <div className="d-flex justify-content-center col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 col-md-3 offset-md-1 col-sm-4 offset-sm-4 mt-sm-2">
               <img
-                src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80"
+                src=""
                 alt=""
               />
             </div>
