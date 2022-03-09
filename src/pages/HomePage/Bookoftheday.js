@@ -32,8 +32,8 @@ function Bookoftheday() {
                 tempore impedit iste dicta?
               </p>
 
-              <button type="button" class="btn btn-dark">Simpan Baca Nanti</button>
-              <button type="button" class="btn btn-dark ms-2">Baca</button>
+              <button type="button" className="btn btn-dark">Simpan Baca Nanti</button>
+              <button type="button" className="btn btn-dark ms-2">Baca</button>
             </div>
           </div>
         </div>

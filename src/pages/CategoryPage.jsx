@@ -67,7 +67,8 @@ function CategoryPage() {
           deskripsi: data.volumeInfo.description,
           readlink: data.volumeInfo.previewLink,
           price: undefined,
-          buylink:undefined
+          buylink:undefined,
+          amount:1
         };
         
         if(data.saleInfo.saleability === 'FOR_SALE') {

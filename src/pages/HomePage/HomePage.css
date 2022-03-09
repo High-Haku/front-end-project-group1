@@ -1,74 +1,83 @@
-
-
-.HomePage{
-    background-image: url("https://images.unsplash.com/photo-1568667256531-7d5ac92eaa7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Ym9vayUyMHNoZWxmfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
-    background-position: center;
+.HomePage::before {
+    background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1828&q=80");
+    background-position: left top;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    content: '';
+}
+
+.HomePage {
+    background: rgb(252, 252, 252);
+    background: radial-gradient(circle, rgba(252, 252, 252, 0) 50%, rgba(0, 0, 0, 0.74) 100%);
+    position: relative;
     /* -webkit-filter:brightness(40%);  */
 }
 
-.HomePage h1{
+.HomePage h1 {
     color: white;
+    text-shadow: 1px 1px 1px rgb(32, 32, 32), 2px 2px 1px rgb(53, 53, 53);
 }
 
-.HomePage input{
+.HomePage input {
     width: 100%;
-    color: aliceblue;
     font-weight: bolder;
 }
 
+.HomePage input::placeholder {
+    color: rgba(255, 255, 255, 0.829);
+}
+
+
 /* Modal */
-.ModalHomePage h1{
+
+.ModalHomePage h1 {
     color: aliceblue;
 }
 
-.ModalHomePage img{
+.ModalHomePage img {
     width: 100%;
 }
 
-.ModalHomePage p{
+.ModalHomePage p {
     text-align: justify;
 }
 
-.card{
+.card {
     width: 15rem;
     height: 25rem;
 }
 
-.card img{
-   height: 70%;
+.card img {
+    height: 70%;
 }
 
-.card h6{
+.card h6 {
     height: 50%;
- }
-
-
+}
 
 
 /* ukuran xtra small */
 
-@media screen and (max-width: 576px) { 
-    .Bookoftheday img{
+@media screen and (max-width: 576px) {
+    .Bookoftheday img {
         width: 70%;
         border-radius: 5%;
         display: flex;
         align-content: center;
     }
-
-    .Bookoftheday p{
+    .Bookoftheday p {
         text-align: justify;
     }
-
-    .Bookoftheday h1{
+    .Bookoftheday h1 {
         display: flex;
         justify-content: center;
     }
-
     /* Modal */
-
-    .ModalHomePage{
+    .ModalHomePage {
         width: 30%;
     }
 }
@@ -76,62 +85,53 @@
 
 /* Ukuran Small */
 
-@media screen and (min-width: 577px) and (max-width: 768px) { 
-.Bookoftheday img{
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .Bookoftheday img {
         width: 200%;
         border-radius: 5%;
         text-align: center;
     }
-
-.Bookoftheday p{
-    text-align: justify;
+    .Bookoftheday p {
+        text-align: justify;
+    }
 }
-    
 
-
-}
 
 /* Ukuran Medium */
+
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    .Bookoftheday{
+    .Bookoftheday {
         height: 450px;
     }
-
-    .Bookoftheday img{
+    .Bookoftheday img {
         height: 70%;
         border-radius: 5%;
     }
-    
-    .Bookoftheday p{
+    .Bookoftheday p {
         text-align: justify;
     }
 }
 
 
 /* Ukuran LG */
+
 @media screen and (min-width: 994px) and (max-width: 1200px) {
     /* Bookoftheday */
-.Bookoftheday img{
-    width: 100%;
-    border-radius: 5%;
-}
-
-.Bookoftheday p{
-    text-align: justify;
-}
-
-}
-
-@media screen and (min-width: 1201px) and (max-width: 1400px) {
-    .Bookoftheday img{
+    .Bookoftheday img {
         width: 100%;
         border-radius: 5%;
     }
-
-    .Bookoftheday p{
+    .Bookoftheday p {
         text-align: justify;
     }
-
 }
 
-
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    .Bookoftheday img {
+        width: 100%;
+        border-radius: 5%;
+    }
+    .Bookoftheday p {
+        text-align: justify;
+    }
+}

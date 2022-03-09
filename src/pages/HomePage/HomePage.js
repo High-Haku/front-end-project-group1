@@ -59,7 +59,7 @@ function filterData(datas) {
             <div className="col-md-7 offset-md-3 col-sm-7 offset-sm-3">
               <div className="d-flex">
                   <input
-                    className="color-light me-2"
+                    className="form-control text-light me-2"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
@@ -69,7 +69,7 @@ function filterData(datas) {
                       setSearch(e.target.value)
                     }}
                   />
-                  <button onClick={getData} class="btn btn-outline-dark">
+                  <button onClick={getData} className="btn btn-success fw-bold">
                     Search
                   </button>
               </div>    
@@ -86,7 +86,7 @@ function filterData(datas) {
            <img src={d.cover} className="card-img-top" alt="..."/>
            <div className="card-body">
              <h6 className="card-title">{d.judul}</h6>
-             <a href="#" class="btn btn-dark">Lanjut Baca</a>
+             <a href="#" className="btn btn-dark">Lanjut Baca</a>
            </div>
          </div>
       ))}
