@@ -2,7 +2,7 @@ import "./HomePage.css";
 import MainFooter from "../../components/MainFooter";
 import Bookoftheday from "./Bookoftheday";
 import TopPicks from "./TopPicks/TopPicks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 function HomePage() {
@@ -20,8 +20,6 @@ let limitData = [];
 
 filterData(limitData)
 }
-
-console.log(data)
 
 function filterData(datas) {
   const filteredData = [];

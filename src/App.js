@@ -20,10 +20,10 @@ function App() {
         <Route path="/" element={<MainNavbar />}>
           <Route index element={<HomePage/>} />
           <Route path="about" element={<AboutUs />} />  
-        <Route path="/payment" element={<Payment />}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/register" element={<Registration/>}></Route>
-        <Route path='*' element={<NotFound />}></Route>
+          <Route path="/payment" element={<Payment />}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/register" element={<Registration/>}></Route>
+          <Route path='*' element={<NotFound />}></Route>
         </Route> 
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/book/:id" element={<BookPage />}></Route>
