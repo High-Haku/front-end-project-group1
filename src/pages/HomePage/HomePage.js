@@ -4,6 +4,9 @@ import Bookoftheday from "./Bookoftheday";
 import TopPicks from "./TopPicks/TopPicks";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {addBookToMyLibrary} from "../../redux/actions/UserAction"
+import { useDispatch } from "react-redux";
+import BookCard from '../../components/BookCard'
 
 function HomePage() {
   const[search, setSearch] = useState('')
@@ -45,6 +48,8 @@ function filterData(datas) {
   setData(filteredData);
 }
 
+const dispatch = useDispatch;
+
 
   return (
     <>
@@ -69,7 +74,7 @@ function filterData(datas) {
                       setSearch(e.target.value)
                     }}
                   />
-                  <button onClick={getData} class="btn btn-outline-dark">
+                  <button onClick={getData} class="btn btn-outline-success">
                     Search
                   </button>
               </div>    
@@ -79,18 +84,14 @@ function filterData(datas) {
           </div>
         </div>
 
-        <div className="d-flex justify-content-center  mt-4 container mb-4">            
+        <div className="d-flex justify-content-center  mt-4 container-fluid mb-4">            
+          <div className="row d-flex justify-content-center">
+                
+              {data.map((d, index)=>(
+                <BookCard data={d} key={index}/>
+              ))}
 
-            {data.map((d)=>(
-           <div className="card ms-3">
-           <img src={d.cover} className="card-img-top" alt="..."/>
-           <div className="card-body">
-             <h6 className="card-title">{d.judul}</h6>
-             <a href="#" class="btn btn-dark">Lanjut Baca</a>
-           </div>
-         </div>
-      ))}
-
+          </div>
       </div>
 
       </div>
@@ -98,7 +99,7 @@ function filterData(datas) {
 
      
 
-      <Bookoftheday data={data} />
+      <Bookoftheday />
       <TopPicks />
       <MainFooter />
     </>

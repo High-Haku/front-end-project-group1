@@ -1,7 +1,11 @@
 
 .slider img{
-    width: 100%;    
-    padding: 5px;
+    width: 100%;
+    height: 300px;    
+}
+
+.slider h6{
+    height: 50px;
 }
 
 .slider .button{
@@ -18,3 +22,7 @@
     text-decoration: none;
 }
 
+.slider .card{
+    width: 300px;
+    height: 400px;
+}

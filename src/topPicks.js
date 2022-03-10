@@ -1,3 +1,5 @@
+import TopPicks from "./pages/HomePage/TopPicks/TopPicks"
+
 const topPicks = [{
         id: "CgwPEAAAQBAJ",
         judul: "Apa yang Kita Pikirkan Ketika Kita Sendirian",
@@ -285,8 +287,9 @@ const topPicks = [{
         readlink: "http://books.google.co.id/books?id=MOUREAAAQBAJ&printsec=frontcover&dq=intitle:you+do+youL+discovering&hl=&cd=1&source=gbs_api",
         price: 83927,
         buylink: "https://play.google.com/store/books/details?id=MOUREAAAQBAJ&rdid=book-MOUREAAAQBAJ&rdot=1&source=gbs_api"
-    }
-
+    },
 ]
+
+
 
 export default topPicks
