@@ -14,7 +14,7 @@ function BookCard({data}) {
         data={data}
       />
 
-      <Card className="mx-2 my-3" style={{minWidth:'140px', maxWidth:'160px', width:'40%', height:'350px'}} onClick={() => setModalShow(true)}>
+      <Card className=" my-3 mx-2" style={{maxWidth:'160px',minWidth:'140px',  width:'40%', height:'350px'}} onClick={() => setModalShow(true)}>
         <Card.Img variant="top" src={data.cover} height='100px' />
         <Card.Body className="mb-2" style={{maxHeight:'100px', overflow:'auto'}}>
           {data.judul}

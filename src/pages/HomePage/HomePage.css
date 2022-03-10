@@ -46,13 +46,14 @@
     text-align: justify;
 }
 
-.card {
-    width: 15rem;
-    height: 25rem;
+
+.card{
+    width: 10rem;
+    height: 20rem;
 }
 
-.card img {
-    height: 70%;
+.card img{
+   height: 60%;
 }
 
 .card h6 {
@@ -117,13 +118,21 @@
 
 @media screen and (min-width: 994px) and (max-width: 1200px) {
     /* Bookoftheday */
-    .Bookoftheday img {
-        width: 100%;
-        border-radius: 5%;
-    }
-    .Bookoftheday p {
-        text-align: justify;
-    }
+
+.Bookoftheday .pembungkus{
+    width: 100%;
+}
+
+.Bookoftheday img{
+    width: 100%;
+    border-radius: 5%;
+}
+
+.Bookoftheday p{
+    text-align: justify;
+}
+
+
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1400px) {

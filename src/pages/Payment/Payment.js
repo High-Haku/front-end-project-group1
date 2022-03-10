@@ -8,8 +8,7 @@ import { clearCart } from "../../redux/actions/CartAction";
 import { useDispatch } from "react-redux";
 
 function Payment() {
-  const user = JSON.parse(localStorage.getItem("user")) || "";
-  const login = sessionStorage.getItem("login") || false;
+  const user = useSelector(state => state.userReducer);
 
   const [ongkir, setOngkir] = useState(12000);
   const [alamat, setAlamat] = useState(user.address || "");
@@ -25,7 +24,7 @@ function Payment() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (items.length === 0 || !login) navigate("/");
+    if (items.length === 0) navigate("/");
     if (!!alamat) setUbahButton(false);
   }, []);
 
@@ -283,6 +282,8 @@ function Payment() {
               <div className="mt-4">
                 <h4 className="text-success fw-bold">Total Pembayaran</h4>
 
+
+
                 <div className="ms-3 d-flex justify-content-between">
                   <p className="m-0">Harga Buku</p>
                   <p className="m-0">Rp {formatRupiah(totalBookPrice)}</p>
@@ -293,6 +294,7 @@ function Payment() {
                   <p className="m-0">Rp {formatRupiah(ongkir)}</p>
                 </div>
               </div>
+
 
               <hr className="garis" />
 

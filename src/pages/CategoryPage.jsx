@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import topPicks from '../topPicks'
@@ -105,7 +105,7 @@ function CategoryPage() {
               <h3 className="md">{category}</h3>
               <Search setSearch={setSearch} />
             </div>
-            <div id="book-container" className="d-flex flex-wrap justify-content-center mb-2">
+            <div id="book-container" className="d-flex flex-wrap justify-content-between mb-2">
               {buku.length !== 0 ? (
                 buku.map((b, index) => {
                   return <BookCard data={b} key={index} />;

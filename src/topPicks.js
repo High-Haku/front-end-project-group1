@@ -1,3 +1,5 @@
+import TopPicks from "./pages/HomePage/TopPicks/TopPicks"
+
 const topPicks = [{
         id: "CgwPEAAAQBAJ",
         judul: "Apa yang Kita Pikirkan Ketika Kita Sendirian",
@@ -302,10 +304,14 @@ const topPicks = [{
         deskripsi: "ÒMas, gimana kalau passion gue belum menghasilkan?Ó ÒMas, apakah lebih baik jadi generalis atau spesialis?Ó ÒMas, gue pengin bisa ganti haluan karier di bidang yang lain, bisakah? ÒMas, gue lagi di tengah-tengah quarter-life crisis. Help me.Ó ÒMas, gue bingung ikigai gue apa.Ó ÒMas, emang di usia 30 nanti, secara finansial gue udah mesti punya apa aja?Ó ÒMas, berbagi dong proses lo menuju ke Rp1M pertama.Ó I feel you. Gue juga pernah mengalami keresahan yang sama. Faktanya, satu dekade pertama dalam perjalanan karier gue dihabiskan untuk bereksperimen dengan sembilan macam role yang berbeda, sampai akhirnya gue menemukan ikigai. Sales, petugas lelang, operator alat berat, travel blogger, food photographer, penyanyi, social media manager, product manager di sebuah tech startup, sampai pengusaha pernah gue jalani. Menariknya, semua kegalauan dan pencarian itu mulai terjawab dengan sendirinya ketika gue bisa menjawab pertanyaan: ÒWho are you?Ó Ketika gue mengenal diri sendiri, maka pada titik itulah gue menemukan jawaban bahwa Òyour life (career, business, relationship, and finance) should be an extension of who you areÓ. Buku ini nggak ngasih jawaban langsung, tapi ngebantu merefleksi diri, melihat ke dalam, mengurai situasi, supaya lo bisa menemukan sendiri jawaban, kapan pun lo bertemu dengan persimpangan.",
         readlink: "http://books.google.co.id/books?id=MOUREAAAQBAJ&printsec=frontcover&dq=intitle:you+do+youL+discovering&hl=&cd=1&source=gbs_api",
         price: 83927,
+
         buylink: "https://play.google.com/store/books/details?id=MOUREAAAQBAJ&rdid=book-MOUREAAAQBAJ&rdot=1&source=gbs_api",
         amount: 1
     }
 
+
 ]
+
+
 
 export default topPicks
