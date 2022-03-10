@@ -30,7 +30,6 @@ function App() {
         <Route path="/user" element={<UserPage />}></Route>
         <Route path='/cart' element={<CartPage />}></Route>
       </Routes>
-
     </>
   );
 }

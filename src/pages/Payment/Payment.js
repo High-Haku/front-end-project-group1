@@ -283,6 +283,8 @@ function Payment() {
               <div className="mt-4">
                 <h4 className="text-success fw-bold">Total Pembayaran</h4>
 
+
+
                 <div className="ms-3 d-flex justify-content-between">
                   <p className="m-0">Harga Buku</p>
                   <p className="m-0">Rp {formatRupiah(totalBookPrice)}</p>
@@ -293,6 +295,7 @@ function Payment() {
                   <p className="m-0">Rp {formatRupiah(ongkir)}</p>
                 </div>
               </div>
+
 
               <hr className="garis" />
 

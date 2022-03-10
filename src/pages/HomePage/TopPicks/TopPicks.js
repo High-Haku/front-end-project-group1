@@ -1,76 +1,87 @@
 import "./TopPicks.css";
 import Slider from "react-slick";
+import topPicks from "../../../topPicks";
+import { useDispatch } from "react-redux";
+import { addBookToMyLibrary } from "../../../redux/actions/UserAction";
+import BookCard from "../../../components/BookCard";
+import { useEffect, useState } from "react";
 
 function TopPicks() {
+  // const [dimensions, setDimensions] = useState({
+  //   height: window.innerHeight,
+  //   width: window.innerWidth,
+  // });
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 5,
+    speed: 500,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          // infinite: true,
+          // dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2
+        }
+      }
+    ]
+  };
+
   
-    const settings = {
-      className: "center",
-      centerMode: true,
-      infinite: true,
-      centerPadding: "60px",
-      slidesToShow: 3,
-      speed: 500
-    };
-    return (
-      <div className="container slider my-5">
-        <h1 className="text-center">Top Picks For You</h1>
-        <Slider {...settings}>
-        <div>
-            <img src="https://images.unsplash.com/photo-1571799610292-935ff425ba12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-            <h6 className="text-center">Judul Buku</h6>
-            <div className="button">
-              <button>Mulai Baca</button>
-              <button className="mx-2">Simpan</button>  
-            </div>
-          </div>
 
-          <div>
-            <img src="https://images.unsplash.com/photo-1571799610292-935ff425ba12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-            <h6 className="text-center">Judul Buku</h6>
-            <div className="button">
-              <button>Mulai Baca</button>
-              <button className="mx-2">Simpan</button>  
-            </div>
-          </div>
+  
+  // useEffect(() => {
+  //   function handleResize() {
+  //     setDimensions({
+  //       height: window.innerHeight,
+  //       width: window.innerWidth,
+  //     });
+  //   }
 
-          <div>
-            <img src="https://images.unsplash.com/photo-1571799610292-935ff425ba12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-            <h6 className="text-center">Judul Buku</h6>
-            <div className="button">
-              <button>Mulai Baca</button>
-              <button className="mx-2">Simpan</button>  
-            </div>
-          </div>
+  //   window.addEventListener("resize", handleResize);
+  // });
 
-          <div>
-            <img src="https://images.unsplash.com/photo-1571799610292-935ff425ba12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-            <h6 className="text-center">Judul Buku</h6>
-            <div className="button">
-              <button>Mulai Baca</button>
-              <button className="mx-2">Simpan</button>  
-            </div>
-          </div>
-
-          <div>
-            <img src="https://images.unsplash.com/photo-1571799610292-935ff425ba12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-            <h6 className="text-center">Judul Buku</h6>
-            <div className="button">
-              <button>Mulai Baca</button>
-              <button className="mx-2">Simpan</button>  
-            </div>
-          </div>
-
-          <div>
-            <img src="https://images.unsplash.com/photo-1571799610292-935ff425ba12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-            <h6 className="text-center">Judul Buku</h6>
-            <div className="button">
-              <button>Mulai Baca</button>
-              <button className="mx-2">Simpan</button>  
-            </div>
-          </div>
-        </Slider>
-      </div>
-    );
-  }
+  // console.log(dimensions);
+  return (
+    <div className="container slider my-5">
+      <h1 className="text-center">Top Picks For You</h1>
+      <Slider {...settings}>
+        {topPicks.map((d, index) => (
+          <BookCard data={d} key={index} />
+        ))}
+      </Slider>
+    </div>
+  );
+}
 
 export default TopPicks;
