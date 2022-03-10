@@ -66,21 +66,7 @@ function TopPicks() {
     ]
   };
 
-  
 
-  
-  // useEffect(() => {
-  //   function handleResize() {
-  //     setDimensions({
-  //       height: window.innerHeight,
-  //       width: window.innerWidth,
-  //     });
-  //   }
-
-  //   window.addEventListener("resize", handleResize);
-  // });
-
-  // console.log(dimensions);
   return (
     <div className="container slider my-5">
       <h1 className="text-center">Top Picks For You</h1>
