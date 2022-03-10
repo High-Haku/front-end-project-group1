@@ -6,6 +6,7 @@ const initialState = {
     phone: "081234567890",
     address: "Jl. Abc no.123 Blok D",
     myLibrary: [],
+    purchaseHistory: []
 };
 
 const userReducer = (state = initialState, action) => {

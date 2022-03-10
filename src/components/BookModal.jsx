@@ -7,6 +7,7 @@ import {
   addBookToMyLibrary,
   removeBookFromMyLibrary,
 } from "../redux/actions/UserAction";
+import formatRupiah from "../formatRupiah";
 
 function BookModal(props) {
   const book = props.data;
@@ -77,7 +78,7 @@ function BookModal(props) {
                 className="ms-2 text-light p-1 fw-bold d-inline-block bg-danger"
                 style={{ fontSize: "15px" }}
               >
-                {book.price ? `Rp. ${book.price}` : "Out of Stock"}
+                {book.price ? `Rp ${formatRupiah(book.price)}` : "Out of Stock"}
               </div>
             </h4>
             <p className="m-0 my-1">
