@@ -1,72 +1,80 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
-import Home from "./Home";
-import Registeration from "./Registration"
-import './Log.css'
-import {Link} from "react-router-dom"
+import "./Log.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLoginInit } from "../redux/actions/UserAction";
 
 function Login() {
-const [emaillog, setEmaillog] = useState(" ");
-const [passwordlog, setPasswordlog] = useState(" ");
+  const [emaillog, setEmaillog] = useState(" ");
+  const [passwordlog, setPasswordlog] = useState(" ");
+  const [flag, setFlag] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-const [register, setRegister] = useState(true);
+  //const [register, setRegister] = useState(true);
 
-function handleLogin(e) {
+  function handleLogin(e) {
     e.preventDefault();
 
-    const user =  JSON.parse(localStorage.getItem("user"));
-    console.log(user);
+    const users = JSON.parse(localStorage.getItem("users"));
+    const user = users.find(
+      (u) => u.email == emaillog && u.password == passwordlog
+    );
 
-    if (emaillog == user.email && passwordlog == user.password){
-        sessionStorage.setItem("isLogin", user.name)
-        alert("berhasil masuk")
+    if (user) {
+      sessionStorage.setItem("loginUser", JSON.stringify(user));
+      alert("berhasil masuk");
+      dispatch(userLoginInit(user));
+      navigate("/");
     } else {
-        alert("email atau password yang anda masukan salah")
+      setFlag(true);
+      setInterval(() => {
+        setFlag(false);
+      }, 2000);
     }
-}
+  }
 
-function handleClick() {
-    setRegister(!register);
-}
-
-
-
-return (
+  return (
     <div className="outer mt-5">
-        <div className="inner">
+      <div className="inner">
         <form onSubmit={handleLogin}>
-        <h3>LogIn</h3>
-        <div className="form-group">
-            <label>Email</label>
+          <h3> LogIn </h3>{" "}
+          <div className="form-group">
+            <label> Email </label>{" "}
             <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email"
-            onChange={(event) => setEmaillog(event.target.value)}
-            />
-        </div>
-
-        <div className="form-group">
-            <label>Password</label>
+              type="email"
+              className="form-control"
+              placeholder="Enter email"
+              required
+              onChange={(event) => setEmaillog(event.target.value)}
+            />{" "}
+          </div>
+          <div className="form-group">
+            <label> Password </label>{" "}
             <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password"
-            onChange={(event) => setPasswordlog(event.target.value)}
-            />
-        </div>
-
-        <button type="submit" className="btn btn-dark btn-lg btn-block">
-            Login
-        </button>
-
-        <Link to="/register">Belum punya akun? click disini</Link>
-
-
-            </form>
-        </div>
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
+              required
+              onChange={(event) => setPasswordlog(event.target.value)}
+            />{" "}
+          </div>
+          <button type="submit" className="btn btn-dark btn-block mt-3 me-2">
+            Login{" "}
+          </button>
+          <Link to="/register"> Belum punya akun ? klik disini </Link>
+          {flag ? (
+            <Alert color="primary" variant="danger" className="mt-3">
+              Password atau Email yang anda masukan salah!
+            </Alert>
+          ) : (
+            ""
+          )}{" "}
+        </form>{" "}
+      </div>{" "}
     </div>
-);
+  );
 }
 
 export default Login;

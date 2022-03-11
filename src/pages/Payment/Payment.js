@@ -1,15 +1,15 @@
 import { Table, Button, Form, InputGroup, FormControl } from "react-bootstrap";
 import "./Payment.css";
 import { useSelector } from "react-redux";
-import formatRupiah from "../../formatRupiah";
+import formatRupiah from "../../utils/formatRupiah";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { clearCart } from "../../redux/actions/CartAction";
 import { useDispatch } from "react-redux";
+import updateLocalStorageData from "../../utils/updateLocalStorageData";
 
 function Payment() {
-  const user = JSON.parse(localStorage.getItem("user")) || "";
-  const login = sessionStorage.getItem("login") || false;
+  const user = useSelector(state => state.userReducer);
 
   const [ongkir, setOngkir] = useState(12000);
   const [alamat, setAlamat] = useState(user.address || "");
@@ -25,7 +25,7 @@ function Payment() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (items.length === 0 || !login) navigate("/");
+    if (items.length === 0) navigate("/");
     if (!!alamat) setUbahButton(false);
   }, []);
 
@@ -97,13 +97,13 @@ function Payment() {
     setOngkir(hargaJenis + hargaKurir);
   }
 
-  function handleOnPay() {
+  function handleOnPay(totalPrice) {
     alert('Transaksi sukses, barang anda sedang kami proses');
 
     const d = new Date()
-    const purchaseHistory = {items, date:`${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`}
+    const purchaseHistory = {items, date:`${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`, totalPrice}
     user.purchaseHistory.push(purchaseHistory);
-    localStorage.setItem('user', JSON.stringify(user));
+    updateLocalStorageData(user);
 
     dispatch(clearCart());
     navigate('/');
@@ -307,7 +307,7 @@ function Payment() {
                 <Button
                   className="w-50 fw-bold bayar"
                   variant="danger"
-                  onClick={handleOnPay}
+                  onClick={() => handleOnPay(totalBookPrice + ongkir)}
                 >
                   Bayar Sekarang
                 </Button>

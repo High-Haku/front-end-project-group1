@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { addBookToCart } from "../redux/actions/CartAction";
 import {
   addBookToMyLibrary,
   removeBookFromMyLibrary,
 } from "../redux/actions/UserAction";
-import formatRupiah from "../formatRupiah";
+import formatRupiah from "../utils/formatRupiah";
 
 function BookModal(props) {
   const book = props.data;
@@ -19,13 +18,17 @@ function BookModal(props) {
   const [bookFound, setBookFound] = useState(false);
   const [onCart, setOnCart] = useState(false);
 
+  //untuk kirim data user
+  const user = useSelector((state) => state.userReducer);
+  const userID = user.id || 0;
+
   // Check if book found in mylibrary
   useEffect(() => {
-    if (myLibrary.find((data) => data.id == book.id)) {
+    if (myLibrary.find((data) => data.id === book.id)) {
       setBookFound(true);
     }
 
-    if (cart.items.find((data) => data.id == book.id)) {
+    if (cart.items.find((data) => data.id === book.id)) {
       setOnCart(true);
     }
   }, []);
@@ -112,7 +115,7 @@ function BookModal(props) {
         {book.price ? (
           onCart ? (
             <div className="d-flex align-items-center">
-            <img
+              <img
                 src={require("../images/icons/check.png")}
                 width="20px"
                 alt="add to cart"
@@ -150,7 +153,7 @@ function BookModal(props) {
               Add to My Library
             </Button>
           )}
-          <a href={`/book/${url}`}>
+          <a href={`/book/${url}/${userID}`}>
             <Button variant="success">Read Now</Button>
           </a>
         </div>

@@ -46,21 +46,6 @@
     text-align: justify;
 }
 
-
-.card{
-    width: 10rem;
-    height: 20rem;
-}
-
-.card img{
-   height: 60%;
-}
-
-.card h6 {
-    height: 50%;
-}
-
-
 /* ukuran xtra small */
 
 @media screen and (max-width: 576px) {

@@ -1,10 +1,7 @@
 import "./TopPicks.css";
 import Slider from "react-slick";
 import topPicks from "../../../topPicks";
-import { useDispatch } from "react-redux";
-import { addBookToMyLibrary } from "../../../redux/actions/UserAction";
 import BookCard from "../../../components/BookCard";
-import { useEffect, useState } from "react";
 
 function TopPicks() {
   // const [dimensions, setDimensions] = useState({
@@ -65,7 +62,6 @@ function TopPicks() {
       }
     ]
   };
-
 
   return (
     <div className="container slider my-5">
