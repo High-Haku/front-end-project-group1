@@ -44,6 +44,11 @@ function HomePage() {
     setData(filteredData);
   }
 
+function handleSubmit(e) {
+  e.preventDefault();
+  getData();
+}
+
   return (
     <>
       <div
@@ -56,7 +61,7 @@ function HomePage() {
               <h1>Mau Baca apa Hari ini</h1>
             </div>
             <div className="col-md-7 offset-md-3 col-sm-7 offset-sm-3">
-              <div className="d-flex">
+                <form onSubmit={(e) => handleSubmit(e)} className='d-flex'>
                 <input
                   className="form-control text-light me-2"
                   type="search"
@@ -68,10 +73,10 @@ function HomePage() {
                   }}
                 />
 
-                <button onSubmit={getData} className="btn btn-success fw-bold">
+                <button type="submit" className="btn btn-success fw-bold">
                   Search
                 </button>
-              </div>
+                </form>
             </div>
           </div>
         </div>

@@ -6,3 +6,13 @@
 .card:hover {
     filter: brightness(.8);
 }
+
+.card{
+    width: 10rem;
+    height: 20rem;
+}
+
+
+.card h6 {
+    height: 50%;
+}
