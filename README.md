@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+https://haku-library.netlify.app/
+
 Frontend Project Group 1
 - Abdul Mukhid
 - Jasmin Mckell
