@@ -1,6 +1,7 @@
 export const ADD_TO_MYLIBRARY = 'ADD_TO_MYLIBRARY';
 export const REMOVE_FROM_MYLIBRARY = 'REMOVE_FROM_MYLIBRARY';
 export const USER_LOGIN_INIT = 'USER_LOGIN_INIT';
+export const CLEAR_DATA = "CLEAR_DATA";
 
 export const addBookToMyLibrary = (book) => {
     return {
@@ -20,5 +21,11 @@ export const userLoginInit = (user) => {
     return {
         type: USER_LOGIN_INIT,
         payload: user
+    }
+}
+
+export const clearData = () => {
+    return {
+        type: CLEAR_DATA
     }
 }

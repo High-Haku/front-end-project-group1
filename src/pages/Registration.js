@@ -12,7 +12,8 @@ function Registration() {
     phone: "",
     address: "",
     myLibrary: [],
-    purchaseHistory: []
+    purchaseHistory: [],
+    id:Date.now()
   });
 
   const [flag, setFlag] = useState(false);

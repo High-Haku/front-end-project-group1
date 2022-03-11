@@ -1,10 +1,14 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { userLoginInit } from "../redux/actions/UserAction";
+import getUserDataFromLocalStorage from "../utils/getUserDataFromLocalStorage";
 
 function BookCanvas() {
   const canvasRef = useRef();
-  const {id} = useParams();
+  const dispatch = useDispatch();
+  const { id, userID } = useParams();
 
   // Initialize loaded state as false
   const [loaded, setLoaded] = useState(false);
@@ -20,6 +24,10 @@ function BookCanvas() {
     scriptTag.addEventListener("load", () => setLoaded(true));
     scriptTag.id = "google-script";
     document.body.appendChild(scriptTag);
+
+    // re-assign user login to reducer
+    const userLogin = getUserDataFromLocalStorage(userID);
+    dispatch(userLoginInit(userLogin));
   }, []);
 
   useEffect(() => {
@@ -37,16 +45,17 @@ function BookCanvas() {
         });
       }
     }
-
   }, [loaded]);
-
-  
 
   return (
     <div>
       {loaded ? (
         <div>
-          <div ref={canvasRef} id="viewerCanvas" style={{height:'100vh'}}></div>
+          <div
+            ref={canvasRef}
+            id="viewerCanvas"
+            style={{ height: "100vh" }}
+          ></div>
         </div>
       ) : (
         "Script not loaded"

@@ -2,6 +2,7 @@ import "./HomePage.css";
 import { useDispatch } from "react-redux";
 import { addBookToMyLibrary } from "../../redux/actions/UserAction";
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 function Bookoftheday() {
   const data = {
@@ -20,6 +21,10 @@ function Bookoftheday() {
 
   const regex = /id=.*/g;
   const url = regex.exec(data.readlink)[0];
+
+  //untuk kirim data user
+  const user = useSelector((state) => state.userReducer);
+  const userID = user.id || 0;
 
   const dispatch = useDispatch();
 
@@ -43,12 +48,12 @@ function Bookoftheday() {
 
               <button
                 type="button"
-                class="btn btn-dark"
+                className="btn btn-dark"
                 onClick={() => dispatch(addBookToMyLibrary(data))}
               >
                 Simpan Baca Nanti
               </button>
-              <a href={`/book/${url}`}>
+              <a href={`/book/${url}/${userID}`}>
                 <Button className="ms-2" variant="success">
                   Read Now
                 </Button>

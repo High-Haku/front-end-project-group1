@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeBookFromCart, changeBookAmount } from "../redux/actions/CartAction";
-import formatRupiah from '../formatRupiah'
+import formatRupiah from '../utils/formatRupiah'
 
 function CartPage() {
   const { items } = useSelector((state) => state.cartReducer);

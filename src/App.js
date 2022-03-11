@@ -26,7 +26,7 @@ function App() {
           <Route path='*' element={<NotFound />}></Route>
         </Route> 
         <Route path="/category" element={<CategoryPage />}></Route>
-        <Route path="/book/:id" element={<BookPage />}></Route>
+        <Route path="/book/:id/:userID" element={<BookPage />}></Route>
         <Route path="/user" element={<UserPage />}></Route>
         <Route path='/cart' element={<CartPage />}></Route>
       </Routes>
