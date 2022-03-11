@@ -42,8 +42,8 @@ function Bookoftheday() {
               <img src={data.cover} alt="" />
             </div>
             <div className="col-xl-9 offset-xl-0 col-lg-9 offset-lg-0 col-md-9 offset-md-0 col-sm-12 offset-sm-0 mt-sm-3">
-              <h5>{data.penulis}</h5>
-              <h6>{data.judul}</h6>
+              <h5>{data.judul}</h5>
+              <h6>{data.penulis} ({data.date})</h6>
               <p>{data.sinopsis}</p>
 
               <button

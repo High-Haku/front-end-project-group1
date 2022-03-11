@@ -14,7 +14,7 @@ function CategoryCarousel() {
             style={{objectFit:"cover"}}
           />
           <Carousel.Caption>
-            <h5> "Kuasailah semua buku, tapi jangan biarkan buku menguasai Anda. Membacalah untuk hidup, bukan hidup untuk membaca." </h5>
+            <h5 className="fst-italic"> "Kuasailah semua buku, tapi jangan biarkan buku menguasai Anda. Membacalah untuk hidup, bukan hidup untuk membaca." </h5>
             <h6>-Owen Meredith-</h6>
           </Carousel.Caption>
         </Carousel.Item>
@@ -28,7 +28,7 @@ function CategoryCarousel() {
           />
 
           <Carousel.Caption>
-            <h5>"Dua pendidikan yang memengaruhi pendidikan manusia: seni dan sains. Keduanya bertemu dalam buku"</h5>
+            <h5 className="fst-italic">"Dua pendidikan yang memengaruhi pendidikan manusia: seni dan sains. Keduanya bertemu dalam buku"</h5>
             <h6>-Bj. Habibi-</h6>
           </Carousel.Caption>
         </Carousel.Item>
@@ -42,7 +42,7 @@ function CategoryCarousel() {
           />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3 className="fst-italic">Third slide label</h3>
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
