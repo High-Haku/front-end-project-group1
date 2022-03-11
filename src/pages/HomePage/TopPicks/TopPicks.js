@@ -17,10 +17,19 @@ function TopPicks() {
     centerMode: true,
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 5,
+    slidesToShow: 6,
     speed: 500,
 
     responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
       {
         breakpoint: 1024,
         settings: {
@@ -51,27 +60,13 @@ function TopPicks() {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 2
+          slidesToScroll: 3
         }
       }
     ]
   };
 
-  
 
-  
-  // useEffect(() => {
-  //   function handleResize() {
-  //     setDimensions({
-  //       height: window.innerHeight,
-  //       width: window.innerWidth,
-  //     });
-  //   }
-
-  //   window.addEventListener("resize", handleResize);
-  // });
-
-  // console.log(dimensions);
   return (
     <div className="container slider my-5">
       <h1 className="text-center">Top Picks For You</h1>
