@@ -1,95 +1,69 @@
-import "./AboutUs.css"
+import "./AboutUs.css";
 import MainFooter from "../../components/MainFooter";
 
 function AboutUs() {
   return (
-  <div>
-    <div className="container about-us mb-4">
-      <div className="row">
-        <h1>ABOUT US</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          earum optio ullam perferendis nam quod, pariatur, ea dolorum
-          temporibus facilis maxime doloribus perspiciatis similique, ad vel
-          modi. Enim, quae distinctio? Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Ipsam architecto quo officia repellat laudantium, ea
-          quia vel temporibus rem aliquam beatae nostrum, veniam doloremque
-          omnis? Mollitia ipsum rerum velit vitae! Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Dolor sed rem consequuntur similique.
-          Iste neque, aliquid debitis reprehenderit quaerat, facere fugiat
-          impedit aspernatur unde harum adipisci architecto laborum culpa nisi.
-        </p>
-      </div>
-
-      <div className="row">
-        <h1>THE TEAM</h1>
-      </div>
-
-      <div className="row content-team">
-        <div className="col-sm-6 col-md-6 col-lg-3">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt=""
-            />
-          </div>
-          <h4>Gilman Firdaus</h4>
+    <div>
+      <div className="container about-us mb-4">
+        <div className="row">
+          <h1> ABOUT US </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ad,
-            accusantium iste libero perspiciatis voluptatibus dolorem enim,
-            ratione quas debitis vitae totam magni expedita voluptas culpa
-            excepturi nostrum, deleniti minima!
+            Haku Library merupakan upaya untuk memelihara dan meningkatkan
+            efisiensi dan efektifitas proses belajar-mengajar. Perpustakaan yang
+            terorganisir secara baik dan sisitematis, secara langsung atau pun
+            tidak langsung dapat memberikan kemudahan bagi proses belajar
+            mengajar di sekolah tempat perpustakaan tersebut berada. Hal ini,
+            terkait dengan kemajuan bidang pendidikan dan dengan adanya
+            perbaikan metode belajar-mengajar yang dirasakan tidak bisa
+            dipisahkan dari masalah penyediaan fasilitas dan sarana pendidikan.
           </p>
         </div>
-        <div className="col-sm-6 col-md-6 col-lg-3">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt=""
-            />
-          </div>
-          <h4>Reyshan Indradi</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ad,
-            accusantium iste libero perspiciatis voluptatibus dolorem enim,
-            ratione quas debitis vitae totam magni expedita voluptas culpa
-            excepturi nostrum, deleniti minima!
-          </p>
+        <div className="row">
+          <h1> THE TEAM </h1>
         </div>
-        <div className="col-sm-6 col-md-6 col-lg-3">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt=""
-            />
+        <div className="row content-team">
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div>
+              <img
+                src={require('../../images/gilman.jpg')}
+                alt=""
+              />
+            </div>
+            <h4> Gilman Firdaus </h4> <p>Hobi ku bermain musik</p>
           </div>
-          <h4>Jasmin Mcckel</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ad,
-            accusantium iste libero perspiciatis voluptatibus dolorem enim,
-            ratione quas debitis vitae totam magni expedita voluptas culpa
-            excepturi nostrum, deleniti minima!
-          </p>
-        </div>
-        <div className="col-sm-6 col-md-6 col-lg-3">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt=""
-            />
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div>
+              <img
+                src={require('../../images/reyshan.jpg')}
+                alt=""
+              />
+            </div>
+            <h4> Reyshan Indradi </h4> <p>Meraih mimpi setinggi hoop basket</p>
           </div>
-          <h4>M Abdul Mukhid</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe ad,
-            accusantium iste libero perspiciatis voluptatibus dolorem enim,
-            ratione quas debitis vitae totam magni expedita voluptas culpa
-            excepturi nostrum, deleniti minima!
-          </p>
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div>
+              <img
+                src={require('../../images/jasmin.jpg')}
+                alt=""
+              />
+            </div>
+            <h4> Jasmin Mcckel </h4>
+            <p>binge watch di netflix adalah hal paling asyik</p>
+          </div>
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div>
+              <img
+                src={require('../../images/abdul.jpg')}
+                alt=""
+              />
+            </div>
+            <h4> M Abdul Mukhid </h4>
+            <p>Makanan kesukaanku rawon pake kerupuk</p>
+          </div>
         </div>
       </div>
+      <MainFooter />
     </div>
-    <MainFooter/>
-  </div>
   );
 }
 

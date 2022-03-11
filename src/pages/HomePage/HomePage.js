@@ -26,7 +26,10 @@ function HomePage() {
     const filteredData = [];
 
     for (const data of datas) {
-      if (data.volumeInfo.imageLinks) {
+      if (
+        data.volumeInfo.imageLinks &&
+        data.accessInfo.viewability !== "NO_PAGES"
+      ) {
         const book = {
           id: data.id,
           judul: data.volumeInfo.title,
@@ -34,20 +37,30 @@ function HomePage() {
           penulis: data.volumeInfo.authors,
           date: data.volumeInfo.publishedDate,
           penerbit: data.volumeInfo.publisher,
-          sinopsis: data.volumeInfo.description,
+          deskripsi: data.volumeInfo.description,
           readlink: data.volumeInfo.previewLink,
+          price: undefined,
+          buylink: undefined,
+          amount: 1,
         };
+
+        if (data.saleInfo.saleability === "FOR_SALE") {
+          book.price = data.saleInfo.retailPrice.amount;
+          book.buylink = data.saleInfo.buyLink;
+        }
+
         filteredData.push(book);
       }
     }
 
+    //console.log(filteredData);
     setData(filteredData);
   }
 
-function handleSubmit(e) {
-  e.preventDefault();
-  getData();
-}
+  function handleSubmit(e) {
+    e.preventDefault();
+    getData();
+  }
 
   return (
     <>
@@ -61,7 +74,7 @@ function handleSubmit(e) {
               <h1>Mau Baca apa Hari ini</h1>
             </div>
             <div className="col-md-7 offset-md-3 col-sm-7 offset-sm-3">
-                <form onSubmit={(e) => handleSubmit(e)} className='d-flex'>
+              <form onSubmit={(e) => handleSubmit(e)} className="d-flex">
                 <input
                   className="form-control text-light me-2"
                   type="search"
@@ -76,7 +89,7 @@ function handleSubmit(e) {
                 <button type="submit" className="btn btn-success fw-bold">
                   Search
                 </button>
-                </form>
+              </form>
             </div>
           </div>
         </div>
