@@ -38,10 +38,10 @@ function Bookoftheday() {
             </div>
           </div>
           <div className="row">
-            <div className="d-flex justify-content-center col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 col-md-3 offset-md-1 col-sm-4 offset-sm-4 mt-sm-2">
+            <div className="d-flex justify-content-center col-xl-3 offset-xl-0 col-lg-3 offset-lg-0 col-md-3 offset-md-0 col-sm-8 offset-sm-2">
               <img src={data.cover} alt="" />
             </div>
-            <div className="col-xl-7 offset-xl-0 col-lg-7 offset-lg-0 col-md-7 offset-md-0 col-sm-12 offset-sm-0 mt-sm-3">
+            <div className="col-xl-9 offset-xl-0 col-lg-9 offset-lg-0 col-md-9 offset-md-0 col-sm-12 offset-sm-0 mt-sm-3">
               <h5>{data.penulis}</h5>
               <h6>{data.judul}</h6>
               <p>{data.sinopsis}</p>

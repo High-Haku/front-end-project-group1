@@ -15,7 +15,7 @@ function HomePage() {
       `https://www.googleapis.com/books/v1/volumes?q=intitle:${search}&&startIndex=0&maxResults=20`
     );
     let limitData = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
       limitData.push(hasil.data.items[i]);
     }
 
@@ -76,7 +76,7 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="d-flex justify-content-center  mt-4 container-fluid mb-4">
+        <div className="d-flex justify-content-center  mt-4 container mb-4">
           <div className="row d-flex justify-content-center">
             {data.map((d, index) => (
               <BookCard data={d} key={index} />

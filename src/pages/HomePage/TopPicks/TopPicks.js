@@ -1,10 +1,7 @@
 import "./TopPicks.css";
 import Slider from "react-slick";
 import topPicks from "../../../topPicks";
-import { useDispatch } from "react-redux";
-import { addBookToMyLibrary } from "../../../redux/actions/UserAction";
 import BookCard from "../../../components/BookCard";
-import { useEffect, useState } from "react";
 
 function TopPicks() {
   // const [dimensions, setDimensions] = useState({
@@ -17,10 +14,19 @@ function TopPicks() {
     centerMode: true,
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 5,
+    slidesToShow: 6,
     speed: 500,
 
     responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
       {
         breakpoint: 1024,
         settings: {
@@ -51,7 +57,7 @@ function TopPicks() {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 2
+          slidesToScroll: 3
         }
       }
     ]
