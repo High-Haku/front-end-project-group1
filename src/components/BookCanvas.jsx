@@ -26,8 +26,10 @@ function BookCanvas() {
     document.body.appendChild(scriptTag);
 
     // re-assign user login to reducer
-    const userLogin = getUserDataFromLocalStorage(userID);
-    dispatch(userLoginInit(userLogin));
+    if (userID != 0) {
+      const userLogin = getUserDataFromLocalStorage(userID);
+      dispatch(userLoginInit(userLogin));
+    }
   }, []);
 
   useEffect(() => {
@@ -35,13 +37,13 @@ function BookCanvas() {
     else {
       if (window.viewer) {
         let viewer = new window.google.books.DefaultViewer(canvasRef.current);
-        viewer.load(`http://books.google.co.id/books?${id}`, alertNotFound);
+        viewer.load(`https://books.google.co.id/books?${id}`, alertNotFound);
       } else {
         window.google.books.load();
         window.google.books.setOnLoadCallback(() => {
           let viewer = new window.google.books.DefaultViewer(canvasRef.current);
           window.viewer = viewer;
-          viewer.load(`http://books.google.co.id/books?${id}`, alertNotFound);
+          viewer.load(`https://books.google.co.id/books?${id}`, alertNotFound);
         });
       }
     }

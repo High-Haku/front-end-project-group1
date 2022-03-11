@@ -5,6 +5,7 @@ import {
     CLEAR_DATA
 } from "../actions/UserAction";
 
+
 const initialState = {
     name: "",
     email: "",
@@ -17,13 +18,17 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
+
         case ADD_TO_MYLIBRARY:
-            if (!state.myLibrary.find((data) => data.id === action.payload.id)) {
+            if (!state.myLibrary.find((data) => data.id === action.payload.id) && state.id !== '') {
                 alert("buku berhasil ditambahkan");
                 return {
                     ...state,
                     myLibrary: [...state.myLibrary, action.payload],
                 };
+            } else {
+                alert('Anda belum login !');
+                return state
             }
 
             return state;

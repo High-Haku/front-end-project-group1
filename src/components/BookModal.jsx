@@ -31,24 +31,36 @@ function BookModal(props) {
     if (cart.items.find((data) => data.id === book.id)) {
       setOnCart(true);
     }
-  }, []);
+  }, [bookFound]);
   /////////////////////////////////////
 
   function addToMyLibrary() {
-    dispatch(addBookToMyLibrary(book));
-    setBookFound(true);
-    props.onHide();
+    if (userID !== 0) {
+      dispatch(addBookToMyLibrary(book));
+      setBookFound(true);
+      props.onHide();
+    } else {
+      alert('Anda belum login, buku gagal ditambahkan !')
+    }
   }
 
   function removeFromMyLibrary() {
-    dispatch(removeBookFromMyLibrary(book));
-    setBookFound(false);
-    props.onHide();
+    if (userID !== 0) {
+      dispatch(removeBookFromMyLibrary(book));
+      setBookFound(false);
+      props.onHide();
+    } else {
+      alert('Anda belum login, buku gagal ditambahkan !')
+    }
   }
 
   function addToCart() {
-    dispatch(addBookToCart(book));
+    if(userID !== 0) {
+      dispatch(addBookToCart(book));
     setOnCart(true);
+    } else {
+      alert('Anda belum login, harap login terlebih dahulu')
+    }
   }
 
   return (
